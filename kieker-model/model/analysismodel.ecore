@@ -401,7 +401,8 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DeployedOperationsPairToDeployedOperationsMapEntry"
         instanceClassName="java.util.Map$Entry">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//execution/OperationAccess"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//execution/OperationAccess"
+          containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="key" containment="true">
         <eGenericType eClassifier="#//execution/Tuple">
           <eTypeArguments eClassifier="#//deployment/DeployedOperation"/>

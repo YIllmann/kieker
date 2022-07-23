@@ -37,7 +37,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class DeployedOperationsPairToDeployedOperationsMapEntryImpl extends MinimalEObjectImpl.Container implements BasicEMap.Entry<Tuple<DeployedOperation, DeployedOperation>,OperationAccess> {
 	/**
-	 * The cached value of the '{@link #getTypedValue() <em>Value</em>}' reference.
+	 * The cached value of the '{@link #getTypedValue() <em>Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTypedValue()
@@ -81,14 +81,6 @@ public class DeployedOperationsPairToDeployedOperationsMapEntryImpl extends Mini
 	 * @generated
 	 */
 	public OperationAccess getTypedValue() {
-		if (value != null && value.eIsProxy()) {
-			InternalEObject oldValue = (InternalEObject)value;
-			value = (OperationAccess)eResolveProxy(oldValue);
-			if (value != oldValue) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExecutionPackage.DEPLOYED_OPERATIONS_PAIR_TO_DEPLOYED_OPERATIONS_MAP_ENTRY__VALUE, oldValue, value));
-			}
-		}
 		return value;
 	}
 
@@ -97,8 +89,14 @@ public class DeployedOperationsPairToDeployedOperationsMapEntryImpl extends Mini
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public OperationAccess basicGetTypedValue() {
-		return value;
+	public NotificationChain basicSetTypedValue(OperationAccess newValue, NotificationChain msgs) {
+		OperationAccess oldValue = value;
+		value = newValue;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExecutionPackage.DEPLOYED_OPERATIONS_PAIR_TO_DEPLOYED_OPERATIONS_MAP_ENTRY__VALUE, oldValue, newValue);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -107,10 +105,17 @@ public class DeployedOperationsPairToDeployedOperationsMapEntryImpl extends Mini
 	 * @generated
 	 */
 	public void setTypedValue(OperationAccess newValue) {
-		OperationAccess oldValue = value;
-		value = newValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExecutionPackage.DEPLOYED_OPERATIONS_PAIR_TO_DEPLOYED_OPERATIONS_MAP_ENTRY__VALUE, oldValue, value));
+		if (newValue != value) {
+			NotificationChain msgs = null;
+			if (value != null)
+				msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExecutionPackage.DEPLOYED_OPERATIONS_PAIR_TO_DEPLOYED_OPERATIONS_MAP_ENTRY__VALUE, null, msgs);
+			if (newValue != null)
+				msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExecutionPackage.DEPLOYED_OPERATIONS_PAIR_TO_DEPLOYED_OPERATIONS_MAP_ENTRY__VALUE, null, msgs);
+			msgs = basicSetTypedValue(newValue, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExecutionPackage.DEPLOYED_OPERATIONS_PAIR_TO_DEPLOYED_OPERATIONS_MAP_ENTRY__VALUE, newValue, newValue));
 	}
 
 	/**
@@ -164,6 +169,8 @@ public class DeployedOperationsPairToDeployedOperationsMapEntryImpl extends Mini
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case ExecutionPackage.DEPLOYED_OPERATIONS_PAIR_TO_DEPLOYED_OPERATIONS_MAP_ENTRY__VALUE:
+				return basicSetTypedValue(null, msgs);
 			case ExecutionPackage.DEPLOYED_OPERATIONS_PAIR_TO_DEPLOYED_OPERATIONS_MAP_ENTRY__KEY:
 				return basicSetTypedKey(null, msgs);
 		}
@@ -179,8 +186,7 @@ public class DeployedOperationsPairToDeployedOperationsMapEntryImpl extends Mini
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ExecutionPackage.DEPLOYED_OPERATIONS_PAIR_TO_DEPLOYED_OPERATIONS_MAP_ENTRY__VALUE:
-				if (resolve) return getTypedValue();
-				return basicGetTypedValue();
+				return getTypedValue();
 			case ExecutionPackage.DEPLOYED_OPERATIONS_PAIR_TO_DEPLOYED_OPERATIONS_MAP_ENTRY__KEY:
 				return getTypedKey();
 		}

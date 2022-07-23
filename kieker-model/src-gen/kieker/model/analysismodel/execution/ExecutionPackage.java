@@ -436,7 +436,7 @@ public interface ExecutionPackage extends EPackage {
 	int DEPLOYED_OPERATIONS_PAIR_TO_DEPLOYED_OPERATIONS_MAP_ENTRY = 7;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -772,17 +772,17 @@ public interface ExecutionPackage extends EPackage {
 	 * @return the meta object for class '<em>Deployed Operations Pair To Deployed Operations Map Entry</em>'.
 	 * @see java.util.Map.Entry
 	 * @model features="value key" 
-	 *        valueType="kieker.model.analysismodel.execution.OperationAccess"
+	 *        valueType="kieker.model.analysismodel.execution.OperationAccess" valueContainment="true"
 	 *        keyType="kieker.model.analysismodel.execution.Tuple&lt;kieker.model.analysismodel.deployment.DeployedOperation, kieker.model.analysismodel.deployment.DeployedOperation&gt;" keyContainment="true"
 	 * @generated
 	 */
 	EClass getDeployedOperationsPairToDeployedOperationsMapEntry();
 
 	/**
-	 * Returns the meta object for the reference '{@link java.util.Map.Entry <em>Value</em>}'.
+	 * Returns the meta object for the containment reference '{@link java.util.Map.Entry <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Value</em>'.
+	 * @return the meta object for the containment reference '<em>Value</em>'.
 	 * @see java.util.Map.Entry
 	 * @see #getDeployedOperationsPairToDeployedOperationsMapEntry()
 	 * @generated
@@ -1066,7 +1066,7 @@ public interface ExecutionPackage extends EPackage {
 		EClass DEPLOYED_OPERATIONS_PAIR_TO_DEPLOYED_OPERATIONS_MAP_ENTRY = eINSTANCE.getDeployedOperationsPairToDeployedOperationsMapEntry();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

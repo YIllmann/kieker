@@ -667,7 +667,7 @@ public class ExecutionPackageImpl extends EPackageImpl implements ExecutionPacka
 		initEAttribute(getOperationAccess_RWAccess(), this.getEDirection(), "RWAccess", null, 0, 1, OperationAccess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(deployedOperationsPairToDeployedOperationsMapEntryEClass, Map.Entry.class, "DeployedOperationsPairToDeployedOperationsMapEntry", !IS_ABSTRACT, !IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDeployedOperationsPairToDeployedOperationsMapEntry_Value(), this.getOperationAccess(), null, "value", null, 0, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDeployedOperationsPairToDeployedOperationsMapEntry_Value(), this.getOperationAccess(), null, "value", null, 0, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		g1 = createEGenericType(this.getTuple());
 		g2 = createEGenericType(theDeploymentPackage.getDeployedOperation());
 		g1.getETypeArguments().add(g2);
